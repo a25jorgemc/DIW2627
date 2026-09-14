@@ -4,49 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francia</title>
+    <title>Francilla</title>
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
         }
 
         body {
             margin: 0 auto;
         }
 
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
+        div {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+            width: 100%;
         }
 
         #principal {
             border: 1px dotted black;
         }
 
-        div {
-            height: 100vh;
-        }
-
         #azulillo {
-            width: 33.33%;
-            background: blue;
-            float: left;
+            background-color: blue;
         }
 
         #blanco {
-            width: 33.33%;
-            background: white;
-            float: left;
+            background-color: white;
         }
 
         #rojillo {
-            width: 33.33%;
-            background: red;
-            float: left;
+            background-color: red;
         }
     </style>
 </head>
+
 
 <body>
     <div id="principal">
