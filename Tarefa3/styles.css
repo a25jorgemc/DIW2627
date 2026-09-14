@@ -1,0 +1,42 @@
+#cabeceira {
+    background-color: black;
+    padding: 1rem;
+}
+
+#textillo {
+    color: yellow;
+}
+
+a {
+    color: #24f708;
+}
+
+#navegacion {
+    background-color: #999999;
+    display: flex;
+    flex-direction: column;
+}
+
+#contido {
+    background-color: #dddddd;
+    padding: 1rem;
+}
+
+#titulo {
+    color: magenta;
+}
+
+#contenedor {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 80vh;
+
+}
+
+#pe {
+    background-color: #bbbbbb;
+    text-align: center;
+    padding: 1rem;
+    color: rgb(133, 10, 10);
+    height: 5vh;
+}
