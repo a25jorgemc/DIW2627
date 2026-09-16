@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+    <style>
+      #principal {
+        display: flex;
+        height: 95vh;
+        gap: 0.5rem;
+        border: 1px solid black;
+        padding: 1rem;
+      }
+      #esquerda {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      #dereita {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      #verde {
+        background-color: green;
+        height: 50%;
+        padding: 1rem;
+      }
+      #rojo {
+        background-color: red;
+        padding: 1rem;
+        height: 50%;
+      }
+      #azul {
+        background-color: blue;
+        padding: 1rem;
+        height: 30%;
+      }
+      #morado {
+        background-color: blueviolet;
+        padding: 1rem;
+        height: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="principal">
+      <div id="esquerda">
+        <div id="verde"></div>
+        <div id="rojo"></div>
+      </div>
+      <div id="dereita">
+        <div id="azul"></div>
+        <div id="morado"></div>
+      </div>
+    </div>
+  </body>
+</html>
