@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>flex</title>
+    <title>grid</title>
     <style>
       * {
         box-sizing: border-box;
@@ -13,45 +13,38 @@
         margin: 0 auto;
       }
       #principal {
-        display: flex;
+        display: grid;
         height: 100vh;
-        gap: 0.5rem;
         border: 1px solid black;
         padding: 1rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
       }
       #esquerda {
-        height: 100%;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
         gap: 0.5rem;
       }
       #dereita {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 0.5fr 1fr;
         gap: 0.5rem;
       }
       #verde {
         background-color: green;
-        height: 50%;
         padding: 1rem;
       }
       #rojo {
         background-color: red;
         padding: 1rem;
-        height: 50%;
       }
       #azul {
         background-color: blue;
         padding: 1rem;
-        height: 30%;
       }
       #morado {
         background-color: blueviolet;
         padding: 1rem;
-        height: 70%;
       }
     </style>
   </head>
