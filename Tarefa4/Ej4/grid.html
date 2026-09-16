@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0 auto;
+      }
+      #principal {
+        border: 2px dotted black;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        height: 100vh;
+        gap: 1rem;
+      }
+      #naranja {
+        padding: 1rem;
+        background-color: #ff7f50;
+        width: 100%;
+      }
+      #azul {
+        padding: 1rem;
+        width: 100%;
+        background-color: #6495ed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="principal">
+      <div id="naranja"></div>
+      <div id="azul"></div>
+    </div>
+  </body>
+</html>
