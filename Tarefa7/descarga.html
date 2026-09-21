@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Descarga</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        left: 0;
+      }
+      h1 {
+        margin: 0;
+        padding: 30px;
+      }
+      #descarga {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        cursor: pointer;
+      }
+      .can {
+        display: block;
+      }
+      #descarga.inicio {
+        left: 15%;
+        transform: translateX(0);
+      }
+      #descarga.mover {
+        left: 85%;
+        transform: translateX(-50%);
+        transition: left 3s;
+      }
+      .barra {
+        width: 70%;
+        height: 20px;
+        background-color: #ddd;
+        position: absolute;
+        top: 450px;
+        left: 15%;
+      }
+
+      .progreso {
+        width: 0%;
+        height: 100%;
+        background-color: green;
+        transition: width 3s;
+      }
+      .progreso.completar {
+        width: 100%;
+      }
+      #mensaje {
+        text-align: center;
+        margin: 0;
+        padding: 30px;
+        transition: opacity 0.3s;
+      }
+      #mensaje.mostrar {
+        opacity: 1;
+      }
+      .caca {
+        position: absolute;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="mensaje">TOCA O CAN PARA DESCARJAR</h1>
+
+    <button id="descarga">
+      <img class="can" src="perro.png" alt="imgBoton" width="300px" />
+    </button>
+
+    <div class="barra">
+      <div class="progreso"></div>
+    </div>
+
+    <script>
+      const perro = document.getElementById('descarga');
+      const progreso = document.querySelector('.progreso');
+      const mensaje = document.getElementById('mensaje');
+
+      perro.addEventListener('click', function () {
+        mensaje.textContent = 'DESCARGANDO...';
+
+        perro.classList.add('inicio');
+
+        setTimeout(function () {
+          perro.classList.add('mover');
+          progreso.classList.add('completar');
+
+          const cacas = setInterval(function () {
+            const posicion = perro.getBoundingClientRect();
+
+            const caca = document.createElement('div');
+
+            caca.textContent = '💩';
+            caca.classList.add('caca');
+
+            caca.style.left = posicion.left + 'px';
+            caca.style.top = posicion.top + 250 + 'px';
+
+            document.body.appendChild(caca);
+          }, 300);
+
+          setTimeout(function () {
+            clearInterval(cacas);
+
+            alert('Descarga completada 💩');
+          }, 3000);
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
