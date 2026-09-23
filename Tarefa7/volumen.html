@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volumen</title>
+    <style>
+      .volumen {
+        width: 300px;
+        margin: 50px auto;
+        text-align: center;
+      }
+
+      .barra-volumen {
+        width: 100%;
+        height: 25px;
+        background-color: #ddd;
+      }
+
+      #nivel {
+        width: 0%;
+        height: 100%;
+        background-color: red;
+      }
+
+      #subir {
+        margin-top: 15px;
+        padding: 10px;
+      }
+
+      #fijar {
+        margin-top: 300px;
+        margin-left: 500px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="volumen">
+      <p>VOLUMEN: <span id="valor">0</span>%</p>
+      <div class="barra-volumen">
+        <div id="nivel"></div>
+      </div>
+      <button id="subir">SUBIR VOLUMEN</button>
+      <button id="fijar">FIJAR VOLUMEN 🔒</button>
+    </div>
+    <script>
+      const subir = document.getElementById('subir');
+      const fijar = document.getElementById('fijar');
+      const nivel = document.getElementById('nivel');
+      const valor = document.getElementById('valor');
+
+      let volumen = 0;
+      let ultimoClick = Date.now();
+      let volumenFijado = false;
+
+      subir.addEventListener('click', function () {
+        if (volumenFijado) {
+          return;
+        }
+
+        ultimoClick = Date.now();
+
+        if (volumen < 100) {
+          volumen++;
+        }
+
+        nivel.style.width = volumen + '%';
+        valor.textContent = volumen;
+      });
+
+      fijar.addEventListener('click', function () {
+        if (volumenFijado) {
+          volumenFijado = false;
+          fijar.textContent = 'FIJAR VOLUMEN ';
+        } else {
+          volumenFijado = true;
+          fijar.textContent = 'DESFIJAR VOLUMEN ';
+        }
+      });
+
+      setInterval(function () {
+        if (volumenFijado) {
+          return;
+        }
+
+        if (Date.now() - ultimoClick > 150) {
+          if (volumen > 0) {
+            volumen--;
+          }
+
+          nivel.style.width = volumen + '%';
+          valor.textContent = volumen;
+        }
+      }, 50);
+    </script>
+  </body>
+</html>

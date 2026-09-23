@@ -95,9 +95,11 @@
       const progreso = document.querySelector('.progreso');
       const mensaje = document.getElementById('mensaje');
 
+      //cando fas click cambia o texto de arriba por descargando
       perro.addEventListener('click', function () {
         mensaje.textContent = 'DESCARGANDO...';
 
+        //poñolle a clase inicio ao can para q se lle aplique o estilo de poñerse a esquerda
         perro.classList.add('inicio');
 
         setTimeout(function () {
