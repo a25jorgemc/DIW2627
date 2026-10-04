@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkboxes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #d5d7da;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #1e293b;
+      padding: 1rem;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 2rem 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      width: 100%;
+      max-width: 320px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .fila {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 0.5rem;
+      padding: 0.6rem;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <div class="fila">
+      <input type="checkbox" id="idQueiso" name="queixo" value="Queixo extra">
+      <label for="idQueiso">Queixo extra</label>
+    </div>
+
+    <div class="fila">
+      <input type="checkbox" id="idPepp" name="pepperoni" value="Pepperoni">
+      <label for="idPepp">Pepperoni</label>
+    </div>
+
+    <div class="fila">
+      <input type="checkbox" id="idAceit" name="aceitunas" value="Aceitunas">
+      <label for="idAceit">Aceitunas</label>
+    </div>
+
+    <button type="button" id="idBoton">Ordenar</button>
+    <h3 id="textoFinal"></h3>
+  </form>
+
+  <script defer>
+    const queixo = document.getElementById("idQueiso");
+    const pepperoni = document.getElementById("idPepp");
+    const aceitunas = document.getElementById("idAceit");
+
+    const boton = document.getElementById("idBoton");
+
+    const textoMostrar = document.getElementById("textoFinal");
+
+    boton.addEventListener("click", function () {
+      let ingredientes = [];
+
+      if (queixo.checked) {
+        ingredientes.push(queixo.value);
+      }
+      if (pepperoni.checked) {
+        ingredientes.push(pepperoni.value);
+      }
+      if (aceitunas.checked) {
+        ingredientes.push(aceitunas.value);
+      }
+
+      if (ingredientes.length == 0) {
+        textoMostrar.textContent = "Selecciona algo antes de pedir";
+      } else {
+        textoMostrar.textContent = ingredientes.join(", ")
+      }
+    })
+
+  </script>
+</body>
+
+</html>

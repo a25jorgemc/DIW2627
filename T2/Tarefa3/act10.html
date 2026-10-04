@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navegación</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      color: #1e293b;
+      background-color: #f1f5f9;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+    }
+
+    nav {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+
+      background-color: #ffffff;
+      padding: 0.4rem 0.6rem;
+      border-radius: 9999px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2e8f0;
+
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #5dc7a5;
+      color: #ffffff;
+    }
+
+    #inicio {
+      height: 100vh;
+    }
+
+    #productos {
+      height: 100vh;
+      background-color: #e2e8f0;
+    }
+
+    #contacto {
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h1>Inicio</h1>
+    <p>Iniciando</p>
+  </section>
+
+  <section id="productos">
+    <h1>Producto</h1>
+    <p>Producteando</p>
+  </section>
+
+  <section id="contacto">
+    <h1>Contacto</h1>
+    <p>Contactando</p>
+  </section>
+</body>
+
+</html>
