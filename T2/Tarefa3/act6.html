@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu desplegable</title>
+</head>
+
+<body>
+  <form>
+    <label for="selectCores" id="texto">Selecciona a túa cor favorita: </label>
+
+    <br>
+
+    <select name="selectCores" id="idCores">
+      <option value="red">Rojo</option>
+      <option value="green">Verde</option>
+      <option value="blue">Azul</option>
+    </select>
+
+    <br>
+    <br>
+
+    <button id="idBoton" type="button">Enviar info e cambiar color da página</button>
+  </form>
+
+  <script defer>
+    const boton = document.getElementById("idBoton");
+    const seleccionarCor = document.getElementById("idCores");
+    const textoColor = document.getElementById("texto");
+
+    boton.addEventListener("click", function () {
+      const corSeleccionada = seleccionarCor.value;
+      document.body.style.backgroundColor = corSeleccionada;
+      textoColor.style.color = "white";
+    })
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botóns</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      color: white;
+      border-radius: 8px;
+      padding: 0.8rem;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .principal {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .confirmar {
+      background-color: rgb(96, 215, 96);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="principal">
+    <div class="opcion">
+      <input type="radio" id="tarjeta" name="metodoPago" value="Tarjeta de crédito">
+      <label for="tarjeta">Tarjeta de crédito</label>
+    </div>
+
+    <div class="opcion">
+      <input type="radio" id="paypal" name="metodoPago" value="PayPal">
+      <label for="paypal">PayPal</label>
+    </div>
+
+    <div class="opcion">
+      <input type="radio" id="transferencia" name="metodoPago" value="Transferencia bancaria">
+      <label for="transferencia">Transferencia bancaria</label>
+    </div>
+
+    <button type="button" id="idConfirm" class="confirmar">Confirmar</button>
+    <h2 id="seleccionado"></h2>
+  </div>
+
+  <script defer>
+    const botonConfirm = document.getElementById("idConfirm");
+    const texto = document.getElementById("seleccionado");
+
+    botonConfirm.addEventListener("click", function () {
+      const opcionMarcada = document.querySelector('input[name="metodoPago"]:checked');
+
+      if (opcionMarcada) {
+        texto.textContent = `Método seleccionado: ${opcionMarcada.value}`;
+      } else {
+        texto.textContent = "Por favor, elixe un método de pago.";
+      }
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campos de texto e etiquetas</title>
+</head>
+
+<body>
+  <form>
+    <label for="nomeUsuario">Introduce o teu nome: </label>
+
+    <br>
+    <br>
+
+    <input type="text" name="nomeUsuario" id="nomeUsuario">
+
+    <br>
+    <br>
+
+    <label for="apelidosUsuario">Introduce os teus apelidos: </label>
+
+    <br>
+    <br>
+
+    <input type="text" name="apelidosUsuario" id="apelidosUsuario">
+
+    <br>
+    <br>
+
+    <button type="button" id="botonEnviar">Enviar e ver na propia página</button>
+  </form>
+
+  <p id="parrafo"></p>
+
+  <script defer>
+    const boton = document.getElementById("botonEnviar");
+    const inputNome = document.getElementById("nomeUsuario");
+    const inputApelidos = document.getElementById("apelidosUsuario");
+    const parrafoPagina = document.getElementById("parrafo");
+
+    boton.addEventListener("click", function () {
+      const nombre = inputNome.value;
+      const apelidos = inputApelidos.value;
+      parrafoPagina.textContent = "Ola " + nombre + " " + apelidos, "+ que tal?"
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventanas e mensajes</title>
+</head>
+
+<body>
+  <button id="btnPedirEdad">Indicar edad</button>
+
+  <script defer>
+    const boton = document.getElementById("btnPedirEdad");
+
+    boton.addEventListener("click", function () {
+      const edad = prompt("Introduce a tua idade: ");
+
+      if (edad == null || edad == "") {
+        alert("Introduce un valor");
+      } else {
+        if (!isNaN(edad)) {
+          alert(`Tes ${edad} anos`)
+        } else {
+          alert(`Introduce un valor válido`)
+        }
+      }
+
+
+    })
+  </script>
+</body>
+
+</html>

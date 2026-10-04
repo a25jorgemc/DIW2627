@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #d5d7da;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+
+      font-family: 'Inter', sans-serif;
+
+      color: #1e293b;
+      padding: 1rem;
+    }
+
+    .contenedorPrincipal {
+      background-color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    .formulario {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .botonEnviar {
+      background-color: rgb(79, 79, 195);
+      color: white;
+      border-radius: 8px;
+      padding: 0.8rem;
+    }
+
+    .formulario input {
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contenedorPrincipal">
+    <h1>Login</h1>
+    <br>
+    <form class="formulario">
+      <label for="usuario"> <b>Usuario:</b> </label>
+      <input type="text" name="usuario" id="idUsuario">
+
+      <label for="contrasinal"><b>Contrasinal:</b></label>
+      <input type="password" name="contrasinal" id="idContrasinal">
+      <button id="idBoton" class="botonEnviar" type="button"><b>Iniciar sesión</b></button>
+    </form>
+  </div>
+
+  <script defer>
+    const boton = document.getElementById("idBoton");
+    const formUsuario = document.getElementById("idUsuario");
+    const formPassword = document.getElementById("idContrasinal");
+
+    boton.addEventListener("click", function () {
+      const usuario = formUsuario.value;
+      const password = formPassword.value;
+      if (usuario == null || password == null || usuario == "" || password == "") {
+        console.log("Introduce valores válidos");
+      } else {
+        console.log(`Usuario: ${usuario}. Contrasinal: ${password} `)
+      }
+    })
+  </script>
+</body>
+
+</html>
