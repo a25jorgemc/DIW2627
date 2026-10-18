@@ -10,37 +10,26 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Oswald:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="estilos_index.css">
 </head>
 
 <body>
-    <!-- Pictogramas ilustrativos; non constitúen unha certificación. -->
-    <svg class="simbolos" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <symbol id="ovo" viewBox="0 0 24 24">
-            <path d="M12 3C8 3 5 10 5 15a7 7 0 0 0 14 0C19 10 16 3 12 3Z" />
-        </symbol>
-        <symbol id="leite" viewBox="0 0 24 24">
-            <path d="M9 2h6v4l3 4v11H6V10l3-4ZM9 6h6M6 11h12M9 14h6v4H9Z" />
-        </symbol>
-        <symbol id="moluscos" viewBox="0 0 24 24">
-            <path
-                d="M10 21h4l1-4c5-1 7-5 6-8-1-2-3-3-5-3-2-4-6-4-8 0-2 0-4 1-5 3-1 3 1 7 6 8ZM12 18V5M10 17 7 8M14 17l3-9M9 16 4 11M15 16l5-5" />
-        </symbol>
-    </svg>
-
-    <div class="paxina">
-        <header id="header">
+    <header id="header">
+        <div class="contido-ancho">
             <div class="identidade">
                 <img class="logo-nav" src="img/logo-bn.png" alt="Emblema de O Pive">
                 <span class="marca">O Pive</span>
             </div>
-            <nav aria-label="Menú principal estático">
-                <span class="activo">Inicio</span><span>Conócenos</span>
-                <span>Carta</span><span class="boton secundario">Contáctanos</span>
+            <nav aria-label="Menú principal">
+                <a href="#index" class="activo">Inicio</a>
+                <a href="#conocenos">Conócenos</a>
+                <a href="#carta">Carta</a>
+                <a href="#contacto" class="boton secundario">Contáctanos</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
+    <div class="paxina">
         <main>
             <section id="index" class="dous">
                 <div>
@@ -53,18 +42,19 @@
                         <small>Aquí cómese coma na casa.</small>
                     </div>
                 </div>
-                <div>
-                    <div class="foto hero-foto" role="img" aria-label="Fotografía dun bocadillo tradicional">
-                        Placeholder · Bocadillo de portada
+                <div class="imaxe-destacada">
+                    <img src="img/portada/bocata-portada.png" alt="Bocadillo de portada">
+                    <div class="nota">
+                        <span class="titulo-nota">PAN DE VERDADE. SABOR DA CASA.</span>
+                        <span class="subtitulo-nota">Feitos ao momento</span>
                     </div>
-                    <p class="nota">PAN DE VERDADE. SABOR DA CASA. · Feitos ao momento</p>
                 </div>
             </section>
 
             <section id="conocenos" class="dous">
                 <div>
                     <p class="antetitulo">Coñécenos · A nosa historia</p>
-                    <h2>Un bar de barrio.<br>Unha historia de familia.</h2>
+                    <h2>Un bar de sempre.<br>Unha historia de familia.</h2>
                     <p>En 1982, abrimos O Pive cunha idea sencilla: dar ben de comer e facer sentir a cada cliente coma
                         se estivera na súa casa. Así comezou esta historia, entre bocadillos, contos na barra e o ir e
                         vir dos clientes.</p>
@@ -72,11 +62,8 @@
                         identifica.</p>
                 </div>
                 <div>
-                    <div class="foto historia-foto" role="img"
-                        aria-label="Espazo reservado para unha fotografía do local">
-                        Placeholder · Fotografía do local
-                    </div>
-                    <p class="nota">DENDE 1982</p>
+                    <img class="foto historia-foto" src="img/historia/local.png" alt="foto do local">
+                    <h4 class="titulo-con-icono">DENDE 1982</h4>
                 </div>
             </section>
 
@@ -95,94 +82,95 @@
                 </div>
                 <div class="grid">
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Patacas bravas">Foto · Patacas bravas</div>
+                        <img class="foto" src="img/menu/pataca.png" alt="Patacas bravas">
                         <div class="info">
                             <div class="nome">
                                 <h4>Patacas bravas</h4><span class="prezo">3,50 €</span>
                             </div>
                             <p>Patacas e a nosa salsa brava.</p>
+                            <div class="alergenos">
+                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                            </div>
                         </div>
                     </article>
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Táboa de embutidos">Foto · Táboa de embutidos</div>
+                        <img class="foto" src="img/menu/tabla.png" alt="Táboa de embutidos">
                         <div class="info">
                             <div class="nome">
                                 <h4>Táboa de embutidos</h4><span class="prezo">7,50 €</span>
                             </div>
                             <p>Selección de xamón, chourizo e salchichón, con pan para compartir.</p>
+                            <div class="alergenos">
+                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Lácteos">Lácteos</span>
+                            </div>
                         </div>
                     </article>
                 </div>
 
                 <div class="categoria">
-                    <h3>Bocadillos</h3><small>Pan feito ao momento <em>(tamén sen gluten)</em></small>
+                    <h3>Bocadillos</h3><small>Pan feito ao momento</small>
                 </div>
                 <div class="grid">
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Bocadillo de chipiróns">Foto · Chipiróns</div>
+                        <img class="foto" src="img/menu/chipirons.png" alt="Bocadillo de chipiróns">
                         <div class="info">
                             <div class="nome">
                                 <h4>Bocadillo de chipiróns</h4><span class="prezo">5,50 €</span>
                             </div>
                             <p>Chipiróns fritos e salsa alioli en pan de barra.</p>
                             <div class="alergenos">
-                                <span><svg aria-hidden="true">
-                                        <use href="#moluscos" />
-                                    </svg>Moluscos</span>
-                                <span><svg aria-hidden="true">
-                                        <use href="#ovo" />
-                                    </svg>Ovos</span>
+                                <span><img class="icono-alerxeno" src="img/menu/moluscos.png"
+                                        alt="Moluscos">Moluscos</span>
+                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
                             </div>
                         </div>
                     </article>
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Bocadillo de pechuga de polo">Foto · Pechuga de polo
-                        </div>
+                        <img class="foto" src="img/menu/pechuga.png" alt="Bocadillo de pechuga de polo">
                         <div class="info">
                             <div class="nome">
                                 <h4>Bocadillo de pechuga de polo</h4><span class="prezo">4,00 €</span>
                             </div>
                             <p>Pechuga de polo á plancha, leituga, tomate e mayonesa en pan de barra.</p>
-                            <div class="alergenos"><span><svg aria-hidden="true">
-                                        <use href="#ovo" />
-                                    </svg>Ovos</span></div>
+                            <div class="alergenos">
+                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                            </div>
                         </div>
                     </article>
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Bocadillo de xamón e queixo">Foto · Xamón e queixo
-                        </div>
+                        <img class="foto" src="img/menu/xamon.png" alt="Bocadillo de xamón e queixo">
                         <div class="info">
                             <div class="nome">
                                 <h4>Bocadillo de xamón e queixo</h4><span class="prezo">4,00 €</span>
                             </div>
                             <p>Xamón curado e queixo fundido, cun toque de aceite de oliva, en pan de baguette.</p>
-                            <div class="alergenos"><span><svg aria-hidden="true">
-                                        <use href="#leite" />
-                                    </svg>Lácteos</span></div>
+                            <div class="alergenos">
+                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Lácteos">Lácteos</span>
+                            </div>
                         </div>
                     </article>
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Bocadillo de tortilla">Foto · Tortilla</div>
+                        <img class="foto" src="img/menu/tortilla.png" alt="Bocadillo de tortilla">
                         <div class="info">
                             <div class="nome">
                                 <h4>Bocadillo de tortilla</h4><span class="prezo">4,00 €</span>
                             </div>
                             <p>Tortilla de pataca e cebola, en pan de bola.</p>
-                            <div class="alergenos"><span><svg aria-hidden="true">
-                                        <use href="#ovo" />
-                                    </svg>Ovos</span></div>
+                            <div class="alergenos">
+                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                            </div>
                         </div>
                     </article>
                     <article class="prato ancho">
-                        <div class="foto" role="img" aria-label="Pepito de ternera">Foto · Pepito de ternera</div>
+                        <img class="foto" src="img/menu/pepito.png" alt="Pepito de ternera">
                         <div class="info">
                             <div class="nome">
                                 <h4>Pepito de ternera</h4><span class="prezo">7,00 €</span>
                             </div>
                             <p>Pepito de ternera á plancha, cebola, pimento e queixo en pan de barra.</p>
-                            <div class="alergenos"><span><svg aria-hidden="true">
-                                        <use href="#leite" />
-                                    </svg>Leite</span></div>
+                            <div class="alergenos">
+                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Leite">Leite</span>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -192,66 +180,69 @@
                 </div>
                 <div class="grid">
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Flan caseiro">Foto · Flan caseiro</div>
+                        <img class="foto" src="img/menu/flan.png" alt="Flan caseiro">
                         <div class="info">
                             <div class="nome">
                                 <h4>Flan caseiro</h4><span class="prezo">3,00 €</span>
                             </div>
                             <p>Flan de ovo feito na casa, con caramelo e nata.</p>
                             <div class="alergenos">
-                                <span><svg aria-hidden="true">
-                                        <use href="#ovo" />
-                                    </svg>Ovos</span>
-                                <span><svg aria-hidden="true">
-                                        <use href="#leite" />
-                                    </svg>Leite</span>
+                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Leite">Leite</span>
                             </div>
                         </div>
                     </article>
                     <article class="prato">
-                        <div class="foto" role="img" aria-label="Tarta de queixo ó forno">Foto · Tarta de queixo ó forno
-                        </div>
+                        <img class="foto" src="img/menu/tarta.png" alt="Tarta de queixo ó forno">
                         <div class="info">
                             <div class="nome">
                                 <h4>Tarta de queixo ó forno</h4><span class="prezo">3,50 €</span>
                             </div>
                             <p>Tarta de queixo cremosa, feita ó forno, con base de galleta.</p>
                             <div class="alergenos">
-                                <span><svg aria-hidden="true">
-                                        <use href="#ovo" />
-                                    </svg>Ovos</span>
-                                <span><svg aria-hidden="true">
-                                        <use href="#leite" />
-                                    </svg>Leite</span>
+                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Leite">Leite</span>
                             </div>
                         </div>
                     </article>
                 </div>
-                <p class="aviso">Pictogramas orientativos: confirma receitas e trazas co persoal.
-                    Non se representa o gluten, presente no pan convencional e que tamén pode estar
-                    noutros ingredientes. O pan sen gluten non garante ausencia de contaminación cruzada.</p>
+
+                <p class="aviso">Confirma receitas e trazas co persoal.
+                    Temos todas as opcións do menú sen gluten.</p>
             </section>
 
             <section id="video-menu">
                 <h2>O sabor empeza aquí</h2>
-                <div class="foto video" role="img" aria-label="Espazo reservado para o vídeo de elaboración">
-                    Placeholder · Elaboración artesanal
-                    <span class="play" aria-hidden="true">▶</span>
-                    <small>Representación estática · Vídeo pendente</small>
+                <div class="video-colector" id="colectorVideo">
+                    <video id="videoMenu" src="video/menu.mp4" playsinline preload="metadata"></video>
+                    <img class="boton-play" id="botonPlay" src="img/video/play.png" alt="Reproducir vídeo">
                 </div>
             </section>
 
             <section id="contacto">
                 <p class="antetitulo">Contacto · Aquí tes a túa mesa</p>
                 <h2>Pasas por aquí?</h2>
+
                 <div class="dous contacto">
-                    <div>
+                    <div class="info-contacto">
                         <p>Para preguntas, reservas ou outros motivos.</p>
-                        <h3>Onde estamos</h3>
+
+                        <h3 class="titulo-con-icono">
+                            <img class="icono-contacto" src="img/contacto/ubicacion.png" alt="icono-ubicacion">
+                            Onde estamos
+                        </h3>
                         <address>Avenida Alfonso Molina, 65<br>Santa Comba, Galicia, España</address>
-                        <h3>Falamos?</h3>
+
+                        <h3 class="titulo-con-icono">
+                            <img class="icono-contacto" src="img/contacto/telefono.png" alt="icono-telefono">
+                            Falamos?
+                        </h3>
                         <p>981 880 740</p>
-                        <h3>Horario orientativo</h3>
+
+                        <h3 class="titulo-con-icono">
+                            <img class="icono-contacto" src="img/contacto/reloj.png" alt="">
+                            Horario orientativo
+                        </h3>
                         <table class="horario" aria-label="Horario orientativo">
                             <tbody>
                                 <tr>
@@ -264,60 +255,116 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="foto mapa" role="img" aria-label="Mapa de Avenida Alfonso Molina 65, Santa Comba">
-                            Placeholder · Mapa<br>Avenida Alfonso Molina, 65 · Santa Comba
-                        </div>
-                        <p class="nota">Localización orientativa.</p>
+
+                        <img class="foto mapa" src="img/contacto/mapa.png"
+                            alt="Mapa de Avenida Alfonso Molina 65, Santa Comba">
                     </div>
 
-                    <div class="formulario" aria-label="Representación estática do formulario">
-                        <h3>Déixanos unha mensaxe</h3>
-                        <small>Os campos marcados con * son obrigatorios.</small>
-                        <div class="campo">
-                            <span class="etiqueta">Nome <span class="requirido">*</span></span>
-                            <div class="entrada">O teu nome</div>
+                    <div class="contenedor-formulario">
+                        <form id="formularioContacto" class="formulario" novalidate>
+                            <h3>Déixanos unha mensaxe</h3>
+                            <small class="subtexto-form">Os campos marcados con * son obrigatorios.</small>
+
+                            <div id="bannerErro" class="banner-erro" style="display: none;">
+                                <strong id="bannerTitulo">Non se puido enviar: revisa os erros.</strong>
+                                <span id="bannerDetalle"></span>
+                            </div>
+
+                            <div class="campo" id="grupoNome">
+                                <label class="etiqueta" for="campoNome">Nome <span class="requirido">*</span></label>
+                                <div class="control-entrada">
+                                    <input type="text" id="campoNome" placeholder="O teu nome">
+                                    <span class="icono-alerta" aria-hidden="true">!</span>
+                                </div>
+                                <span class="texto-erro">Debes introducir o teu nome</span>
+                            </div>
+
+                            <div class="campo" id="grupoEmail">
+                                <label class="etiqueta" for="campoEmail">Correo electrónico <span
+                                        class="requirido">*</span></label>
+                                <div class="control-entrada">
+                                    <input type="email" id="campoEmail" placeholder="nome@exemplo.com">
+                                    <span class="icono-alerta" aria-hidden="true">!</span>
+                                </div>
+                                <span class="texto-erro">Debes introducir un correo válido</span>
+                            </div>
+
+                            <div class="campo" id="grupoMensaxe">
+                                <label class="etiqueta" for="campoMensaxe">Mensaxe <span
+                                        class="requirido">*</span></label>
+                                <div class="control-entrada">
+                                    <textarea id="campoMensaxe" class="entrada-mensaxe"
+                                        placeholder="Cóntanos en que che podemos axudar…"></textarea>
+                                    <span class="icono-alerta" aria-hidden="true">!</span>
+                                </div>
+                                <span class="texto-erro">Escribe a túa consulta antes de enviar a mensaxe.</span>
+                            </div>
+
+                            <div class="campo-check" id="grupoAceptacion">
+                                <label class="aceptacion">
+                                    <input type="checkbox" id="campoAceptacion">
+                                    <span>Acepto que se utilicen os meus datos para responder á consulta. <span
+                                            class="requirido">*</span></span>
+                                </label>
+                                <span class="texto-erro">Debes aceptar os termos.</span>
+                            </div>
+
+                            <button type="submit" id="botonEnviar" class="boton boton-enviar">
+                                <img id="spinnerEnvio" class="spinner" src="img/contacto/spinner.gif" alt="enviando"
+                                    style="display: none;">
+                                <span id="textoBoton">Enviar mensaxe →</span>
+                            </button>
+                        </form>
+
+                        <div id="vistaExito" class="formulario vista-exito" style="display: none;">
+                            <img class="icono-exito" src="img/contacto/exito.png" alt="Éxito">
+                            <h3>Mensaxe enviada</h3>
+                            <p id="parrafoConfirmacion" class="texto-confirmacion"></p>
+                            <button type="button" id="botonReiniciar" class="boton">Escribir outra mensaxe</button>
                         </div>
-                        <div class="campo">
-                            <span class="etiqueta">Correo electrónico <span class="requirido">*</span></span>
-                            <div class="entrada">nome@exemplo.com</div>
-                        </div>
-                        <div class="campo">
-                            <span class="etiqueta">Mensaxe <span class="requirido">*</span></span>
-                            <div class="entrada mensaxe">Cóntanos en que che podemos axudar…</div>
-                        </div>
-                        <div class="aceptacion">
-                            <span class="caixa" aria-hidden="true"></span>
-                            <span>Acepto que se utilicen os meus datos para responder á consulta.
-                                <span class="requirido">*</span></span>
-                        </div>
-                        <span class="boton">Enviar mensaxe</span>
-                        <p class="nota">Formulario de mostra. Non envía mensaxes.</p>
                     </div>
                 </div>
             </section>
         </main>
+    </div>
 
-        <footer id="footer">
+    <footer id="footer">
+        <div class="contido-ancho">
             <div class="pe-superior">
-                <div>
-                    <p class="marca">O Pive</p>
-                    <p>Bocadillos, bebida e historias. Dende 1982.</p>
+                <div class="pe-col-marca">
+                    <h2 class="pe-logo">O PIVE</h2>
+                    <p class="pe-lema">Bocadillos, bebida e historias. Dende 1982.</p>
                 </div>
-                <div>
-                    <h3>Ligazóns rápidas</h3>
-                    <p>Inicio · Conócenos · Carta · Contacto</p>
-                </div>
-                <div>
-                    <h3>Seguimos en contacto</h3>
-                    <p>Instagram · Facebook</p>
+
+                <nav class="pe-nav" aria-label="Navegación do pé de páxina">
+                    <a href="#index">INICIO</a>
+                    <a href="#conocenos">CONÓCENOS</a>
+                    <a href="#carta">CARTA</a>
+                    <a href="#contacto">CONTACTO</a>
+                </nav>
+
+                <div class="pe-col-redes">
+                    <span class="pe-titulo-redes">SEGUIMOS EN CONTACTO</span>
+                    <div class="pe-ligazons-redes">
+                        <a href="https://instagram.com">
+                            <img class="icono-social" src="img/footer/insta.png" alt="Instagram">
+                            Instagram
+                        </a>
+                        <a href="https://facebook.com">
+                            <img class="icono-social" src="img/footer/facebook.png" alt="Facebook">
+                            Facebook
+                        </a>
+                    </div>
                 </div>
             </div>
+
             <div class="creditos">
                 <small>© 2026 O Pive · O teu bar de sempre.</small>
                 <small>[Deseñado por: Jorge Mouro- IES San Clemente]</small>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
