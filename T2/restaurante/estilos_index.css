@@ -938,3 +938,103 @@ header nav a.activo {
         transform: translateY(0);
     }
 }
+
+/* --- TOOLTIPS DE AXUDA NOS ALÉRXENOS --- */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background-color: var(--texto);
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+[data-tooltip]::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--texto);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before,
+[data-tooltip]:focus::after,
+[data-tooltip]:focus::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.btn-arriba {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--granate);
+    color: #ffffff;
+    border: 2px solid var(--mostaza);
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+    z-index: 999;
+}
+
+/* Estado cando é visible ao baixar */
+.btn-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-arriba:hover {
+    background-color: #CC3F31;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* --- BARRA GUÍA DE LECTURA --- */
+.barra-progreso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background-color: var(--mostaza);
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+}

@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 grupoNome.classList.remove('con-erro');
             }
 
-            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+\$/;
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regexEmail.test(campoEmail.value.trim())) {
                 grupoEmail.classList.add('con-erro');
                 errores.push('correo electrónico');
@@ -195,5 +195,30 @@ document.addEventListener('DOMContentLoaded', () => {
             form.style.display = 'block';
         });
     }
+    // --- BOTÓN VOLVER ARRIBA ---
+    const btnArriba = document.getElementById('btnVolverArriba');
 
+    window.addEventListener('scroll', () => {
+        // Aparece cando o usuario baixa máis de 350px
+        if (window.pageYOffset > 350) {
+            btnArriba.classList.add('visible');
+        } else {
+            btnArriba.classList.remove('visible');
+        }
+    });
+
+    btnArriba.addEventListener('click', () => {
+        desprazamentoSuave(0, 600); // Emprega a túa función de desprazamento suave existente
+    });
+
+    // --- BARRA DE PROGRESO DE NAVEGACIÓN ---
+    const barraProgreso = document.getElementById('barraProgreso');
+
+    window.addEventListener('scroll', () => {
+        const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+        if (alturaTotal > 0 && barraProgreso) {
+            const progreso = (window.pageYOffset / alturaTotal) * 100;
+            barraProgreso.style.width = `${progreso}%`;
+        }
+    });
 });

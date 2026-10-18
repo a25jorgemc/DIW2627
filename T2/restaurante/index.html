@@ -15,12 +15,13 @@
 
 <body>
     <header id="header">
+        <div id="barraProgreso" class="barra-progreso"></div>
         <div class="contido-ancho">
             <div class="identidade">
                 <img class="logo-nav" src="img/logo-bn.png" alt="Emblema de O Pive">
                 <span class="marca">O Pive</span>
             </div>
-            <nav aria-label="Menú principal">
+            <nav id="menu-principal" aria-label="Menú principal">
                 <a href="#index" class="activo">Inicio</a>
                 <a href="#conocenos">Conócenos</a>
                 <a href="#carta">Carta</a>
@@ -30,7 +31,7 @@
     </header>
 
     <div class="paxina">
-        <main>
+        <main id="principal">
             <section id="index" class="dous">
                 <div>
                     <img class="logo-cor" src="img/logo-cor.png" alt="O Pive · Bocatería">
@@ -89,7 +90,8 @@
                             </div>
                             <p>Patacas e a nosa salsa brava.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span data-tooltip="Contén ovo" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/ovo.png" alt="Ovos">Ovos</span>
                             </div>
                         </div>
                     </article>
@@ -101,7 +103,8 @@
                             </div>
                             <p>Selección de xamón, chourizo e salchichón, con pan para compartir.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Lácteos">Lácteos</span>
+                                <span data-tooltip="Contén lácteos" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/leite.png" alt="Lácteos">Lácteos</span>
                             </div>
                         </div>
                     </article>
@@ -119,9 +122,10 @@
                             </div>
                             <p>Chipiróns fritos e salsa alioli en pan de barra.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/moluscos.png"
-                                        alt="Moluscos">Moluscos</span>
-                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span data-tooltip="Contén moluscos" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/moluscos.png" alt="Moluscos">Moluscos</span>
+                                <span data-tooltip="Contén ovo" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/ovo.png" alt="Ovos">Ovos</span>
                             </div>
                         </div>
                     </article>
@@ -133,7 +137,8 @@
                             </div>
                             <p>Pechuga de polo á plancha, leituga, tomate e mayonesa en pan de barra.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span data-tooltip="Contén ovo" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/ovo.png" alt="Ovos">Ovos</span>
                             </div>
                         </div>
                     </article>
@@ -145,7 +150,8 @@
                             </div>
                             <p>Xamón curado e queixo fundido, cun toque de aceite de oliva, en pan de baguette.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Lácteos">Lácteos</span>
+                                <span data-tooltip="Contén lácteos" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/leite.png" alt="Lácteos">Lácteos</span>
                             </div>
                         </div>
                     </article>
@@ -157,7 +163,8 @@
                             </div>
                             <p>Tortilla de pataca e cebola, en pan de bola.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span data-tooltip="Contén ovo" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/ovo.png" alt="Ovos">Ovos</span>
                             </div>
                         </div>
                     </article>
@@ -169,7 +176,8 @@
                             </div>
                             <p>Pepito de ternera á plancha, cebola, pimento e queixo en pan de barra.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Leite">Leite</span>
+                                <span data-tooltip="Contén lácteos" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/leite.png" alt="Leite">Leite</span>
                             </div>
                         </div>
                     </article>
@@ -187,8 +195,10 @@
                             </div>
                             <p>Flan de ovo feito na casa, con caramelo e nata.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
-                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Leite">Leite</span>
+                                <span data-tooltip="Contén ovo" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span data-tooltip="Contén leite" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/leite.png" alt="Leite">Leite</span>
                             </div>
                         </div>
                     </article>
@@ -200,8 +210,10 @@
                             </div>
                             <p>Tarta de queixo cremosa, feita ó forno, con base de galleta.</p>
                             <div class="alergenos">
-                                <span><img class="icono-alerxeno" src="img/menu/ovo.png" alt="Ovos">Ovos</span>
-                                <span><img class="icono-alerxeno" src="img/menu/leite.png" alt="Leite">Leite</span>
+                                <span data-tooltip="Contén ovo" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/ovo.png" alt="Ovos">Ovos</span>
+                                <span data-tooltip="Contén lácteos" tabindex="0"><img class="icono-alerxeno"
+                                        src="img/menu/leite.png" alt="Leite">Leite</span>
                             </div>
                         </div>
                     </article>
@@ -240,7 +252,7 @@
                         <p>981 880 740</p>
 
                         <h3 class="titulo-con-icono">
-                            <img class="icono-contacto" src="img/contacto/reloj.png" alt="">
+                            <img class="icono-contacto" src="img/contacto/reloj.png" alt="icono-reloj">
                             Horario orientativo
                         </h3>
                         <table class="horario" aria-label="Horario orientativo">
@@ -336,7 +348,7 @@
                     <p class="pe-lema">Bocadillos, bebida e historias. Dende 1982.</p>
                 </div>
 
-                <nav class="pe-nav" aria-label="Navegación do pé de páxina">
+                <nav id="menu-pe" class="pe-nav" aria-label="Navegación do pé de páxina">
                     <a href="#index">INICIO</a>
                     <a href="#conocenos">CONÓCENOS</a>
                     <a href="#carta">CARTA</a>
@@ -364,6 +376,9 @@
             </div>
         </div>
     </footer>
+    <button id="btnVolverArriba" class="btn-arriba" aria-label="Volver ao inicio da páxina" title="Volver arriba">
+        ↑
+    </button>
     <script src="script.js"></script>
 </body>
 
