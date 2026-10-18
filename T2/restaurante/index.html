@@ -18,8 +18,8 @@
         <div id="barraProgreso" class="barra-progreso"></div>
         <div class="contido-ancho">
             <div class="identidade">
-                <img class="logo-nav" src="img/logo-bn.png" alt="Emblema de O Pive">
-                <span class="marca">O Pive</span>
+                <a href="#index"> <img class="logo-nav" src="img/logo-cor.png" alt="Emblema de O Pive"></a>
+
             </div>
             <nav id="menu-principal" aria-label="Menú principal">
                 <a href="#index" class="activo">Inicio</a>
@@ -34,12 +34,12 @@
         <main id="principal">
             <section id="index" class="dous">
                 <div>
-                    <img class="logo-cor" src="img/logo-cor.png" alt="O Pive · Bocatería">
+                    <img class="logo-cor" src="img/logo-completo.png" alt="O Pive · Bocatería">
                     <p class="antetitulo">Dende 1982</p>
                     <h1>O bo de sempre.<br>Entre pan<br>e pan.</h1>
                     <p>Bocadillos tradicionais dende 1982. Comida casera e unha mesa na que sempre es benvido.</p>
                     <div class="accion">
-                        <span class="boton">Bótalle un ollo á carta →</span>
+                        <a class="boton" href="#carta">Bótalle un ollo á carta →</a>
                         <small>Aquí cómese coma na casa.</small>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
 
                         <h3 class="titulo-con-icono">
                             <img class="icono-contacto" src="img/contacto/reloj.png" alt="icono-reloj">
-                            Horario orientativo
+                            Horario
                         </h3>
                         <table class="horario" aria-label="Horario orientativo">
                             <tbody>
@@ -268,8 +268,12 @@
                             </tbody>
                         </table>
 
-                        <img class="foto mapa" src="img/contacto/mapa.png"
-                            alt="Mapa de Avenida Alfonso Molina 65, Santa Comba">
+                        <div class="colector-mapa">
+                            <iframe id="mapa-interactivo" title="Mapa de localización de O Pive en Santa Comba"
+                                src="https://maps.google.com/maps?q=Avenida+Alfonso+Molina+65,+Santa+Comba,+A+Coruña&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
 
                     <div class="contenedor-formulario">

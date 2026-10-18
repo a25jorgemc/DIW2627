@@ -23,19 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. DESPRAZAMENTO SUAVE MANUAL (FUNCIONA SEMPRE) ---
+    // --- 2. DESPRAZAMENTO SUAVE MANUAL (APLICADO A CALQUERA LIGAZÓN INTERNA) ---
     function desprazamentoSuave(obxectivoY, duracion = 700) {
         const inicioY = window.pageYOffset;
         const distancia = obxectivoY - inicioY;
         let tempoInicio = null;
 
-        // Función matemática de aceleración/freado suave (ease-in-out)
         function animacion(tempoActual) {
             if (!tempoInicio) tempoInicio = tempoActual;
             const tempoTranscorrido = tempoActual - tempoInicio;
             const progreso = Math.min(tempoTranscorrido / duracion, 1);
 
-            // Easing cúbico
+            // Easing cúbico (aceleración e freado suave)
             const factorSuave = progreso < 0.5
                 ? 4 * progreso * progreso * progreso
                 : 1 - Math.pow(-2 * progreso + 2, 3) / 2;
@@ -50,22 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animacion);
     }
 
-    // Engadir o evento a todas as ligazóns do menú
-    const ligazons = document.querySelectorAll('header nav a[href^="#"]');
+    // Selecciona TODAS as ligazóns internas da páxina (header, botón portada, footer, etc.)
+    const ligazonsInternas = document.querySelectorAll('a[href^="#"]');
 
-    ligazons.forEach(enlace => {
+    ligazonsInternas.forEach(enlace => {
         enlace.addEventListener('click', function (e) {
             const destinoId = this.getAttribute('href');
+
+            // Ignorar se a ligazón é só '#' baleira
+            if (destinoId === '#' || destinoId === '') return;
+
             const elementoDestino = document.querySelector(destinoId);
 
             if (elementoDestino) {
-                e.preventDefault(); // Evita o salto brusco inmediato
+                e.preventDefault(); // Evita o salto brusco nativo
 
                 const header = document.getElementById('header');
                 const alturaHeader = header ? header.offsetHeight : 100;
                 const posicionDestino = elementoDestino.getBoundingClientRect().top + window.pageYOffset - alturaHeader;
 
-                desprazamentoSuave(posicionDestino, 600); // 600ms de animación fluída
+                desprazamentoSuave(posicionDestino, 600);
                 history.pushState(null, null, destinoId);
             }
         });
