@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnArriba.addEventListener('click', () => {
-        desprazamentoSuave(0, 600); // Emprega a túa función de desprazamento suave existente
+        desprazamentoSuave(0, 600);
     });
 
     // --- BARRA DE PROGRESO DE NAVEGACIÓN ---
