@@ -80,11 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         let seccionActual = '';
-        const scrollPos = window.pageYOffset + 140;
+        const header = document.getElementById('header');
+        const alturaHeader = header ? header.offsetHeight : 100;
+
+        // Sumamos a altura do header + uns 20px de marxe para activar a sección en canto entre baixo o header
+        const scrollPos = window.pageYOffset + alturaHeader + 20;
 
         seccions.forEach(seccion => {
             const top = seccion.offsetTop;
             const height = seccion.offsetHeight;
+
             if (scrollPos >= top && scrollPos < top + height) {
                 seccionActual = seccion.getAttribute('id');
             }
